@@ -7,7 +7,11 @@ export function Hero() {
   return (
     <Box py={80} c="white">
       <Container>
-        <SimpleGrid cols={{ base: 1, md: 2 }} className="items-center">
+        <SimpleGrid
+          cols={{ base: 1, md: 2 }}
+          verticalSpacing={50}
+          className="items-center"
+        >
           <Stack gap={24}>
             <Title order={1} fz={{ base: 36, md: 48 }} fw={700}>
               Build Your Awesome Platform

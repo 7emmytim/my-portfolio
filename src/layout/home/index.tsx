@@ -22,11 +22,11 @@ export function Home() {
       }}
       bg="#19191B"
     >
-      <AppShell.Header style={{ border: "none" }}>
+      <AppShell.Header bg="#19191B" style={{ border: "none" }}>
         <Header opened={opened} toggle={toggle} />
       </AppShell.Header>
 
-      <AppShell.Navbar py="md" px={4}>
+      <AppShell.Navbar py="md" px={4} bg="#19191B" style={{ border: "none" }}>
         <Navbar />
       </AppShell.Navbar>
 
@@ -35,7 +35,7 @@ export function Home() {
           <Hero />
           <Why />
           <About />
-          <Services />
+          {/* <Services /> */}
           {/* <Projects /> */}
         </Stack>
       </AppShell.Main>

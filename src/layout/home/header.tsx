@@ -2,6 +2,12 @@ import { Box, Burger, Button, Group, Text } from "@mantine/core";
 import Link from "next/link";
 import { Container } from "./container";
 
+export const navs = [
+  { label: "About", href: "/" },
+  { label: "Services", href: "/" },
+  { label: "Projects", href: "/" },
+];
+
 export function Header({
   opened,
   toggle,
@@ -10,7 +16,7 @@ export function Header({
   toggle: () => void;
 }) {
   return (
-    <Box bg="#19191B" c="white" h="100%">
+    <Box c="white" h="100%">
       <Container h="100%">
         <Group h="100%">
           <Group justify="space-between" style={{ flex: 1 }}>
@@ -21,37 +27,21 @@ export function Header({
               {/* <Sydfunds /> */}
             </Link>
             <Group gap={0} visibleFrom="sm">
-              <Button
-                variant="transparent"
-                color="white"
-                fz={16}
-                fw={400}
-                component={Link}
-                href="/"
-              >
-                About
-              </Button>
-              <Button
-                variant="transparent"
-                color="white"
-                fz={16}
-                fw={400}
-                component={Link}
-                href="/"
-              >
-                Features
-              </Button>
-
-              <Button
-                color="white"
-                variant="transparent"
-                fz={16}
-                fw={400}
-                component={Link}
-                href="/"
-              >
-                Contact me
-              </Button>
+              {navs.map(({ label, href }) => {
+                return (
+                  <Button
+                    key={label}
+                    variant="transparent"
+                    color="white"
+                    fz={16}
+                    fw={400}
+                    component={Link}
+                    href={href}
+                  >
+                    {label}
+                  </Button>
+                );
+              })}
             </Group>
 
             <Button
