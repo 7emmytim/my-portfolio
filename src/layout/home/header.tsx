@@ -1,23 +1,81 @@
-import { Button, Group } from "@mantine/core";
+import { Box, Burger, Button, Group, Text } from "@mantine/core";
+import Link from "next/link";
 import { Container } from "./container";
 
-export function Header() {
+export function Header({
+  opened,
+  toggle,
+}: {
+  opened: boolean;
+  toggle: () => void;
+}) {
   return (
-    <header className="bg-[#19191B] py-6 text-white">
-      <Container className="flex justify-between items-center">
-        <div className="text-xl font-bold">Timilehin</div>
-        <nav>
-          <Group gap="xl" className="hidden md:flex">
-            <a href="#">Home</a>
-            <a href="#">Services</a>
-            <a href="#">Our Project</a>
-            <a href="#">About Us</a>
+    <Box bg="#19191B" c="white" h="100%">
+      <Container h="100%">
+        <Group h="100%">
+          <Group justify="space-between" style={{ flex: 1 }}>
+            <Link href="/">
+              <Text fz={20} fw={700}>
+                Timilehin
+              </Text>
+              {/* <Sydfunds /> */}
+            </Link>
+            <Group gap={0} visibleFrom="sm">
+              <Button
+                variant="transparent"
+                color="white"
+                fz={16}
+                fw={400}
+                component={Link}
+                href="/"
+              >
+                About
+              </Button>
+              <Button
+                variant="transparent"
+                color="white"
+                fz={16}
+                fw={400}
+                component={Link}
+                href="/"
+              >
+                Features
+              </Button>
+
+              <Button
+                color="white"
+                variant="transparent"
+                fz={16}
+                fw={400}
+                component={Link}
+                href="/"
+              >
+                Contact me
+              </Button>
+            </Group>
+
+            <Button
+              radius={6}
+              size="sm"
+              visibleFrom="sm"
+              component={Link}
+              href="/"
+              variant="outline"
+              color="white"
+            >
+              Contact me
+            </Button>
           </Group>
-        </nav>
-        <Button variant="outline" color="white" size="sm">
-          Contact us
-        </Button>
+
+          <Burger
+            opened={opened}
+            onClick={toggle}
+            hiddenFrom="sm"
+            size="sm"
+            color="white"
+          />
+        </Group>
       </Container>
-    </header>
+    </Box>
   );
 }

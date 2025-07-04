@@ -35,7 +35,7 @@ const projects = [
 
 export function Projects() {
   return (
-    <Box bg="#19191B" py={80} c="white">
+    <Box py={80} c="white">
       <Container>
         <Title fw={700} order={2} ta="center" mb={40} fz={30}>
           Projects

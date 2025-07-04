@@ -3,40 +3,32 @@ import "@mantine/carousel/styles.css";
 import "@mantine/core/styles.css";
 import { createTheme, MantineProvider } from "@mantine/core";
 import type { AppProps } from "next/app";
-import Head from "next/head";
+import { MetaTags } from "@/layout";
 
 const theme = createTheme({
   fontFamily: "Poppins, sans-serif",
-  // primaryColor: "green",
-  // primaryShade: { light: 9, dark: 9 },
-  // fontFamily: "WDXL Lubrifont TC, sans-serif",
+  primaryColor: "brand",
+  colors: {
+    brand: [
+      "#ececff",
+      "#c5c5f6",
+      "#9d9ded",
+      "#7676e6",
+      "#5454D4", // main shade (500)
+      "#3e3eb3",
+      "#2e2e93",
+      "#202072",
+      "#141452",
+      "#0a0a32",
+    ],
+  },
+  primaryShade: { light: 5, dark: 5 },
 });
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <MantineProvider theme={theme} defaultColorScheme="light">
-      <Head>
-        <title>Frontend dev</title>
-        <meta name="description" content="Frontend dev" />
-        <link rel="icon" href="/favicon.png" />
-
-        <meta property="og:url" content="https://www.7timilehin.vercel.dev/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Frontend dev" />
-        <meta property="og:description" content="Frontend dev" />
-        <meta property="og:image" content="/favicon.png" />
-        <meta property="og:logo" content="/favicon.png" />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:domain" content="7timilehin.vercel.dev" />
-        <meta
-          property="twitter:url"
-          content="https://www.7timilehin.vercel.dev/"
-        />
-        <meta name="twitter:title" content="Frontend dev" />
-        <meta name="twitter:description" content="Frontend dev" />
-        <meta name="twitter:image" content="/favicon.png" />
-      </Head>
+      <MetaTags />
       <Component {...pageProps} />
     </MantineProvider>
   );

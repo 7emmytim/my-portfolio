@@ -1,35 +1,44 @@
-import { Button, Title, Text, Grid, Image } from "@mantine/core";
+import { Button, Title, Text, SimpleGrid, Stack, Box } from "@mantine/core";
 import { Container } from "./container";
+import Image from "next/image";
+import profileImage from "@/public/images/profile.png";
 
 export function Hero() {
   return (
-    <section className="bg-[#19191B] text-white py-20">
+    <Box py={80} c="white">
       <Container>
-        <Grid align="center">
-          <Grid.Col span={{ base: 12, md: 6 }}>
-            <Title order={1} className="text-4xl md:text-5xl font-bold" mb={24}>
+        <SimpleGrid cols={{ base: 1, md: 2 }} className="items-center">
+          <Stack gap={24}>
+            <Title order={1} fz={{ base: 36, md: 48 }} fw={700}>
               Build Your Awesome Platform
             </Title>
-            <Text className="text-gray-400" mb={24}>
-              I have a digital studio that offers several services such as UI/UX
-              Design to development. We will provide the best service for those
-              who use our services.
+            <Text c="#99a1af">
+              I’m Timilehin, a frontend developer based in Nigeria. I specialize
+              in building modern and performant web applications using
+              technologies like React, Next.js, and Tailwind CSS. I enjoy
+              creating elegant user interfaces that solve real-world problems.
             </Text>
-            <Button color="indigo" radius="md">
-              Our Services →
+            <Button radius="md" w="fit-content">
+              My Services →
             </Button>
-          </Grid.Col>
+          </Stack>
 
-          <Grid.Col span={{ base: 12, md: 6 }} className="flex justify-center">
-            <Image
-              src="/images/person-hero.png"
-              alt="Hero"
+          <Box className="flex justify-center">
+            <Box
+              pos="relative"
               className="w-full max-w-xs"
-              radius="md"
-            />
-          </Grid.Col>
-        </Grid>
+              h={profileImage.height}
+            >
+              <Image
+                src={profileImage.src}
+                alt="Timilehin"
+                fill
+                className="rounded-lg"
+              />
+            </Box>
+          </Box>
+        </SimpleGrid>
       </Container>
-    </section>
+    </Box>
   );
 }

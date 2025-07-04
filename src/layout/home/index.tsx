@@ -20,11 +20,10 @@ export function Home() {
         breakpoint: "sm",
         collapsed: { desktop: true, mobile: !opened },
       }}
+      bg="#19191B"
     >
-      <AppShell.Header>
-        <Header
-        // opened={opened} toggle={toggle}
-        />
+      <AppShell.Header style={{ border: "none" }}>
+        <Header opened={opened} toggle={toggle} />
       </AppShell.Header>
 
       <AppShell.Navbar py="md" px={4}>
@@ -37,7 +36,7 @@ export function Home() {
           <Why />
           <About />
           <Services />
-          <Projects />
+          {/* <Projects /> */}
         </Stack>
       </AppShell.Main>
 

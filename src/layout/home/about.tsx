@@ -3,7 +3,7 @@ import { Container } from "./container";
 
 export function About() {
   return (
-    <Box bg="#19191B" py={80} c="white">
+    <Box py={80} c="white">
       <Container>
         <Title order={2} className="text-3xl" fw={700} mb={16}>
           About Me
