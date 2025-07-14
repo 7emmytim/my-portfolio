@@ -32,10 +32,7 @@ export function MetaTags() {
         property="og:description"
         content="Explore my work as a frontend developer. I specialize in creating sleek and responsive interfaces with React, Next.js, and modern UI tools."
       />
-      <meta
-        property="og:image"
-        content="https://www.timilehinomotugba.com/og-image.png"
-      />
+      <meta property="og:image" content="/profile.png" />
 
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
@@ -51,10 +48,7 @@ export function MetaTags() {
         property="twitter:description"
         content="Hi, I'm Timilehin — a frontend developer passionate about building beautiful, performant web experiences."
       />
-      <meta
-        property="twitter:image"
-        content="https://www.timilehinomotugba.com/og-image.png"
-      />
+      <meta property="twitter:image" content="/profile.png" />
 
       {/* Favicon */}
       <link rel="icon" href="/favicon.png" />

@@ -25,7 +25,7 @@ export function Experience() {
               key={index}
               bullet={
                 <ActionIcon color="white" radius="100%" size="100%" p={3}>
-                  <Avatar src={logo} size="100%" />
+                  <Avatar src={logo} size="100%" alt={company} />
                 </ActionIcon>
               }
               className="relative transition-all duration-300 group cursor-pointer"

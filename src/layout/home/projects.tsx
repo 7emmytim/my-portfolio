@@ -30,6 +30,7 @@ export function Projects() {
         direction={width > 992 ? "down" : "left"}
         autoFill
         gradient
+        gradientWidth={100}
         gradientColor="#19191B"
         className="overflow-hidden"
         // className="!h-[300px] lg:h-[400px] xl:h-full overflow-hidden"

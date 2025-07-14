@@ -19,25 +19,7 @@ export function Hero() {
           like React, Next.js, and Tailwind CSS. I enjoy creating elegant user
           interfaces that solve real-world problems.
         </Text>
-        {/* <ActionIcon
-          size={60}
-          variant="transparent"
-          visibleFrom="md"
-          radius="100%"
-          component={Link}
-          href={{
-            pathname,
-            query: {
-              action: action === "pause" ? "play" : "pause",
-            },
-          }}
-        >
-          {action === "pause" ? (
-            <PlayCircle variant="Bold" className="fill-current" size={48} />
-          ) : (
-            <PauseCircle variant="Bold" className="fill-current" size={48} />
-          )}
-        </ActionIcon> */}
+
         <Button
           radius="xl"
           size="md"
@@ -55,9 +37,12 @@ export function Hero() {
           component={Link}
           href={{
             pathname,
-            query: {
-              action: action === "pause" ? "play" : "pause",
-            },
+            query:
+              action === "pause"
+                ? {}
+                : {
+                    action: "pause",
+                  },
           }}
         >
           {action === "pause" ? "Play" : "Hold"}
