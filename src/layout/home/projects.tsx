@@ -1,98 +1,62 @@
-import {
-  Card,
-  Image,
-  Text,
-  Badge,
-  Group,
-  SimpleGrid,
-  Button,
-  Box,
-  Title,
-} from "@mantine/core";
-import { HuobiToken, Link } from "iconsax-react";
-import { Container } from "./container";
-
-const projects = [
-  {
-    title: "Portfolio Website",
-    image: "/images/project1.png",
-    description:
-      "My personal portfolio built with Next.js, Tailwind, and Mantine.",
-    tech: ["Next.js", "Tailwind CSS", "Mantine"],
-    github: "https://github.com/yourusername/portfolio",
-    live: "https://yourportfolio.com",
-  },
-  {
-    title: "Blog Platform",
-    image: "/images/project2.png",
-    description:
-      "A markdown blog platform with categories, tags, and dark mode.",
-    tech: ["Next.js", "TypeScript", "MDX"],
-    github: "https://github.com/yourusername/blog-platform",
-    live: "https://yourblog.com",
-  },
-];
+import { useMemo } from "react";
+import { Box, Stack } from "@mantine/core";
+import Image from "next/image";
+import Marquee from "react-fast-marquee";
+import data from "@/data/projects.json";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useViewportSize } from "@mantine/hooks";
 
 export function Projects() {
+  const { width } = useViewportSize();
+  const { query } = useRouter();
+  const action = query.action ?? "play";
+
+  const play = useMemo(() => {
+    return action === "play";
+  }, [action]);
+
   return (
-    <Box py={80} c="white">
-      <Container>
-        <Title fw={700} order={2} ta="center" mb={40} fz={30}>
-          Projects
-        </Title>
-
-        <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} spacing="lg">
-          {projects.map((project) => (
-            <Card
-              key={project.title}
-              shadow="sm"
-              padding="lg"
-              className="bg-[#1f1f21]"
+    <Stack
+      gap={20}
+      h="100%"
+      pt={{ base: 0, xl: 300 }}
+      className="overflow-hidden"
+    >
+      <Marquee
+        pauseOnClick
+        pauseOnHover
+        play={play}
+        direction={width > 992 ? "down" : "left"}
+        autoFill
+        gradient
+        gradientColor="#19191B"
+        className="overflow-hidden"
+        // className="!h-[300px] lg:h-[400px] xl:h-full overflow-hidden"
+      >
+        {data.map(({ image, url, name }, index) => {
+          return (
+            <Box
+              key={index}
+              h={400}
+              w={{ base: 300, lg: 400 }}
+              component={Link}
+              href={url}
+              target="_blank"
+              pos="relative"
+              className="overflow-hidden cursor-pointer block"
+              mr={50}
             >
-              <Card.Section>
-                <Image src={project.image} height={160} alt={project.title} />
-              </Card.Section>
-
-              <Text mt={16} fw={600} fz={20} c="white">
-                {project.title}
-              </Text>
-              <Text size="sm" mt={8} c="#99a1af">
-                {project.description}
-              </Text>
-
-              <Group gap="xs" wrap="wrap" mt={16}>
-                {project.tech.map((tech) => (
-                  <Badge key={tech} color="blue" variant="light">
-                    {tech}
-                  </Badge>
-                ))}
-              </Group>
-
-              <Group gap="xs" mt={24}>
-                <Button
-                  component="a"
-                  href={project.live}
-                  target="_blank"
-                  size="xs"
-                  leftSection={<Link size={16} />}
-                >
-                  Live
-                </Button>
-                <Button
-                  component="a"
-                  href={project.github}
-                  target="_blank"
-                  size="xs"
-                  variant="outline"
-                  leftSection={<HuobiToken size={16} />}
-                >
-                  GitHub
-                </Button>
-              </Group>
-            </Card>
-          ))}
-        </SimpleGrid>
-      </Container>
-    </Box>
+              <Image
+                fill
+                src={`/images/${image}.png`}
+                alt={name}
+                className="object-contain transition-transform duration-500 hover:scale-110"
+              />
+            </Box>
+          );
+        })}
+      </Marquee>
+    </Stack>
   );
 }

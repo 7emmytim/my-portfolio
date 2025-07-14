@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Africa Exchange",
+        "company": "AFEX",
+        "image": "africa-exchange",
+        "url": "https://africaexchange.com/",
+        "description": ""
+    },
+    {
+        "name": "Helpa",
+        "company": "Helpa",
+        "image": "helpa-v2",
+        "url": "https://helpa.me/",
+        "description": ""
+    },
+    {
+        "name": "Grant Management System",
+        "company": "NICRAT",
+        "image": "gms",
+        "url": "https://nicrat.sydfunds.com/",
+        "description": ""
+    },
+    {
+        "name": "Light House Inverter",
+        "company": "Light House Inverter",
+        "image": "light-house-inverter",
+        "url": "https://www.lighthouseinverter.com/",
+        "description": ""
+    }
+]

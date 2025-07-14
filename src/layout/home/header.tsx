@@ -1,71 +1,68 @@
-import { Box, Burger, Button, Group, Text } from "@mantine/core";
+import { ActionIcon, Avatar, Box, Drawer, Group, Text } from "@mantine/core";
 import Link from "next/link";
 import { Container } from "./container";
+import { Add, Sun1 } from "iconsax-react";
+import { MobileMenu } from "@/icons";
+import { useDisclosure } from "@mantine/hooks";
+import { useTheme } from "@/hooks";
 
-export const navs = [
-  { label: "About", href: "/" },
-  { label: "Services", href: "/" },
-  { label: "Projects", href: "/" },
-];
+export function Header() {
+  const [opened, { open, close }] = useDisclosure(false);
+  const { colorScheme, toggleTheme } = useTheme();
 
-export function Header({
-  opened,
-  toggle,
-}: {
-  opened: boolean;
-  toggle: () => void;
-}) {
   return (
     <Box c="white" h="100%">
       <Container h="100%">
-        <Group h="100%">
-          <Group justify="space-between" style={{ flex: 1 }}>
-            <Link href="/">
+        <Group h="100%" justify="space-between">
+          <Link href="/">
+            <Group>
+              <Avatar />
+
               <Text fz={20} fw={700}>
                 Timilehin
               </Text>
-              {/* <Sydfunds /> */}
-            </Link>
-            <Group gap={0} visibleFrom="sm">
-              {navs.map(({ label, href }) => {
-                return (
-                  <Button
-                    key={label}
-                    variant="transparent"
-                    color="white"
-                    fz={16}
-                    fw={400}
-                    component={Link}
-                    href={href}
-                  >
-                    {label}
-                  </Button>
-                );
-              })}
             </Group>
+          </Link>
 
-            <Button
-              radius={6}
-              size="sm"
-              visibleFrom="sm"
-              component={Link}
-              href="/"
-              variant="outline"
-              color="white"
+          <Group>
+            <ActionIcon
+              variant="transparent"
+              // onClick={toggleTheme}
             >
-              Contact me
-            </Button>
-          </Group>
+              {colorScheme === "dark" ? (
+                <Sun1 color="white" size="100%" />
+              ) : (
+                <Sun1 color="white" size="100%" />
+              )}
+            </ActionIcon>
 
-          <Burger
-            opened={opened}
-            onClick={toggle}
-            hiddenFrom="sm"
-            size="sm"
-            color="white"
-          />
+            <ActionIcon
+              w={36}
+              h={36}
+              p={6}
+              radius={10}
+              variant="outline"
+              fz={28}
+              onClick={opened ? close : open}
+            >
+              {opened ? (
+                <Add className="rotate-45" color="white" />
+              ) : (
+                <MobileMenu />
+              )}
+            </ActionIcon>
+          </Group>
         </Group>
       </Container>
+
+      <Drawer
+        opened={false}
+        onClose={close}
+        // bg="#19191B"
+      >
+        <Box py="md" px={4} bg="#19191B"></Box>
+        {/* Drawer content */}
+      </Drawer>
     </Box>
   );
 }

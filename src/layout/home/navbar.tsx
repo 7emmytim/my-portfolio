@@ -1,6 +1,11 @@
 import { Button, Stack } from "@mantine/core";
-import { navs } from "./header";
 import Link from "next/link";
+
+const navs = [
+  { label: "About", href: "/" },
+  { label: "Experience", href: "/" },
+  { label: "Projects", href: "/" },
+];
 
 export function Navbar() {
   return (

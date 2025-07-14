@@ -10,7 +10,20 @@ module.exports = {
                 poppins: ['Poppins', 'sans-serif'],
             },
             colors: {
-                darkbg: '#19191B',
+                brand: {
+                    25: "#ececff",
+                    50: "#c5c5f6",
+                    100: "#9d9ded",
+                    200: "#7676e6",
+                    300: "#5454D4", // main shade (500)
+                    400: "#3e3eb3",
+                    500: "#2e2e93",
+                    600: "#202072",
+                    700: "#141452",
+                    800: "#0a0a32",
+                },
+                bg: 'var(--color-bg)',
+                primary: 'var(--color-primary)',
             },
         },
     },

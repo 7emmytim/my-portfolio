@@ -1,43 +1,29 @@
-import { useDisclosure } from "@mantine/hooks";
-import { AppShell, Stack } from "@mantine/core";
-import { About } from "./about";
+import { AppShell, SimpleGrid, Stack } from "@mantine/core";
 import { Footer } from "./footer";
 import { Header } from "./header";
-import { Navbar } from "./navbar";
 import { Hero } from "./hero";
-import { Why } from "./why";
-import { Services } from "./services";
+import { Experience } from "./experience";
 import { Projects } from "./projects";
+import { Container } from "./container";
 
 export function Home() {
-  const [opened, { toggle }] = useDisclosure();
-
   return (
-    <AppShell
-      header={{ height: 80 }}
-      navbar={{
-        width: 300,
-        breakpoint: "sm",
-        collapsed: { desktop: true, mobile: !opened },
-      }}
-      bg="#19191B"
-    >
+    <AppShell header={{ height: 80 }} bg="#19191B">
       <AppShell.Header bg="#19191B" style={{ border: "none" }}>
-        <Header opened={opened} toggle={toggle} />
+        <Header />
       </AppShell.Header>
 
-      <AppShell.Navbar py="md" px={4} bg="#19191B" style={{ border: "none" }}>
-        <Navbar />
-      </AppShell.Navbar>
-
       <AppShell.Main>
-        <Stack gap={0}>
-          <Hero />
-          <Why />
-          <About />
-          {/* <Services /> */}
-          {/* <Projects /> */}
-        </Stack>
+        <Container>
+          <SimpleGrid cols={{ base: 1, md: 2 }} spacing={{ base: 0, md: 50 }}>
+            <Stack h="100%" gap={100}>
+              <Hero />
+              <Experience />
+            </Stack>
+
+            <Projects />
+          </SimpleGrid>
+        </Container>
       </AppShell.Main>
 
       <AppShell.Footer pos="relative" className="!border-none">
