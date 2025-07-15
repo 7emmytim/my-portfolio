@@ -16,7 +16,7 @@ export function Home() {
       <AppShell.Main>
         <Container>
           <SimpleGrid cols={{ base: 1, md: 2 }} spacing={{ base: 0, md: 50 }}>
-            <Stack h="100%" gap={100}>
+            <Stack h="100%" className="[996px]:!gap-20">
               <Hero />
               <Experience />
             </Stack>

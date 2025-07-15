@@ -1,4 +1,12 @@
-import { Title, Text, Stack, Box, ActionIcon, Button } from "@mantine/core";
+import {
+  Title,
+  Text,
+  Stack,
+  Box,
+  ActionIcon,
+  Button,
+  Group,
+} from "@mantine/core";
 import { PauseCircle, PlayCircle } from "iconsax-react";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -8,7 +16,7 @@ export function Hero() {
   const action = (query.action ?? "play") as "play" | "pause";
 
   return (
-    <Box py={80} c="white">
+    <Box py={{ base: 60, md: 80 }} c="white">
       <Stack gap={24}>
         <Title order={1} fz={{ base: 30, md: 36, lg: 48 }} fw={700}>
           Build Your Awesome Platform
@@ -20,33 +28,47 @@ export function Hero() {
           interfaces that solve real-world problems.
         </Text>
 
-        <Button
-          radius="xl"
-          size="md"
-          visibleFrom="md"
-          w={130}
-          rightSection={
-            <ActionIcon variant="transparent">
-              {action === "pause" ? (
-                <PlayCircle variant="Bold" className="fill-white" size={48} />
-              ) : (
-                <PauseCircle variant="Bold" className="fill-white" size={48} />
-              )}
-            </ActionIcon>
-          }
-          component={Link}
-          href={{
-            pathname,
-            query:
-              action === "pause"
-                ? {}
-                : {
-                    action: "pause",
-                  },
-          }}
-        >
-          {action === "pause" ? "Play" : "Hold"}
-        </Button>
+        <Group>
+          <Button
+            radius="xl"
+            size="md"
+            visibleFrom="md"
+            w={130}
+            rightSection={
+              <ActionIcon variant="transparent">
+                {action === "pause" ? (
+                  <PlayCircle variant="Bold" className="fill-white" size={48} />
+                ) : (
+                  <PauseCircle
+                    variant="Bold"
+                    className="fill-white"
+                    size={48}
+                  />
+                )}
+              </ActionIcon>
+            }
+            component={Link}
+            href={{
+              pathname,
+              query:
+                action === "pause"
+                  ? {}
+                  : {
+                      action: "pause",
+                    },
+            }}
+          >
+            {action === "pause" ? "Play" : "Hold"}
+          </Button>
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="opacity-0 text-sm m-0 p-0"
+          >
+            Download Resume
+          </a>
+        </Group>
       </Stack>
     </Box>
   );

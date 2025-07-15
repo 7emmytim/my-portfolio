@@ -11,10 +11,36 @@ import {
 import { Cd } from "iconsax-react";
 import { TransmitRight } from "@/icons";
 import data from "@/data/experiences.json";
+import { useViewportSize } from "@mantine/hooks";
 
 export function Experience() {
+  const { width } = useViewportSize();
+
   return (
-    <Timeline active={1} bulletSize={40} lineWidth={2}>
+    <Timeline
+      active={1}
+      bulletSize={40}
+      lineWidth={2}
+      styles={{
+        root: {
+          paddingInlineStart: width > 992 ? "var(--offset)" : 0,
+        },
+        item: {
+          paddingInlineStart: width > 992 ? "var(--offset)" : 0,
+        },
+        itemBody: {
+          paddingInlineStart: width > 992 ? "var(--offset)" : 0,
+          marginTop: width > 992 ? "auto" : 10,
+        },
+        itemBullet: {
+          position: width > 992 ? "absolute" : "relative",
+          left:
+            width > 992
+              ? "calc((var(--tl-bullet-size) / 2 + var(--tl-line-width) / 2) * -1)"
+              : 0,
+        },
+      }}
+    >
       {data.map(
         (
           { company, title, type, duration, logo, description, skills },
@@ -55,10 +81,11 @@ export function Experience() {
                 <Text c="white" size="sm" ta="justify">
                   {description}
                 </Text>
-                <Group>
+                <Group gap={5}>
                   {skills.map((item) => {
                     return (
                       <Badge
+                        size="lg"
                         variant="outline"
                         c="white"
                         tt="capitalize"

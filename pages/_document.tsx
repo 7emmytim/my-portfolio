@@ -6,6 +6,11 @@ export default function Document() {
     <Html lang="en" {...mantineHtmlProps}>
       <Head>
         <ColorSchemeScript defaultColorScheme="light" />
+        {/* Google Site Verification */}
+        <meta
+          name="google-site-verification"
+          content="BhuT7hhwmAmBNPhB6QyJ2GPWCuGYPFgfdCaZDyHJ_So"
+        />
         {/* Google Fonts: Poppins */}
         <link
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"

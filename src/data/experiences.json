@@ -5,12 +5,12 @@
         "type": "Full-time",
         "duration": "Jan 2021 - Present",
         "logo": "https://media.licdn.com/dms/image/v2/C4E0BAQGUXraIhl0u8w/company-logo_100_100/company-logo_100_100/0/1630644778319/afex_commodities_exchange_logo?e=1755129600&v=beta&t=Laq-Ptgl5poqFKmr9EPc1p98tgykNNE3zJkAqDf7Alw",
-        "description": "Currently, I'm a Senior Front-End Engineer at Klaviyo, specializing in accessibility. I contribute to the creation                    and maintenance of UI components that power Klaviyo’s                    frontend, ensuring our platform meets web accessibility                    standards and best practices to deliver an inclusive user                    experience.",
+        "description": "Currently working with backend apis and product designs to maintain Africa exchange, the company's trading platform",
         "skills": [
             "Next.js",
             "TypeScript",
-            "Tailwind CSS",
-            "Bitbucket"
+            "Bitbucket",
+            "Vitest"
         ]
     },
     {
@@ -19,12 +19,12 @@
         "type": "Contract",
         "duration": "Aug 2022 - Nov 2022, Apr 2024 - Dec 2024",
         "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQFzwYyUSOmaoA/company-logo_100_100/company-logo_100_100/0/1674620522771?e=1755129600&v=beta&t=nlg9Q1iu46EKLNCPlyLf_McceXGjsjc1d3U0FzcmUWE",
-        "description": "Currently, I'm a Senior Front-End Engineer at Klaviyo, specializing in accessibility. I contribute to the creation                    and maintenance of UI components that power Klaviyo’s                    frontend, ensuring our platform meets web accessibility                    standards and best practices to deliver an inclusive user                    experience.",
+        "description": "Worked with a team to build two versions of the company's user and admin healthcare platforms",
         "skills": [
             "Next.js",
+            "Mantine UI",
             "TypeScript",
-            "Tailwind CSS",
-            "Bitbucket"
+            "Tailwind CSS"
         ]
     },
     {
@@ -33,12 +33,11 @@
         "type": "Contract",
         "duration": "Aug 2022 - Nov 2022, Apr 2024 - Dec 2024",
         "logo": "https://media.licdn.com/dms/image/v2/D4D0BAQELxqODs5LNqw/company-logo_100_100/company-logo_100_100/0/1661581875089?e=1755129600&v=beta&t=iepHSd3UYSwTsh0BDPPLZMnS7E_lPxxO_oLfAib2XxI",
-        "description": "Currently, I'm a Senior Front-End Engineer at Klaviyo, specializing in accessibility. I contribute to the creation                    and maintenance of UI components that power Klaviyo’s                    frontend, ensuring our platform meets web accessibility                    standards and best practices to deliver an inclusive user                    experience.",
+        "description": "Structured and queried data from strapi to build the blogs page",
         "skills": [
             "Next.js",
-            "TypeScript",
             "Tailwind CSS",
-            "Bitbucket"
+            "Strapi"
         ]
     }
 ]
