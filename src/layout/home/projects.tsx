@@ -51,6 +51,8 @@ export function Projects() {
                 src={`/images/${image}.png`}
                 alt={name}
                 className="object-contain transition-transform duration-500 hover:scale-110"
+                sizes="100%"
+                {...(image === "africa-exchange" ? { priority: true } : {})}
               />
             </Box>
           );

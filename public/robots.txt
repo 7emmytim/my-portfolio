@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://timilehinomotugba.com
+
+# Sitemaps
+Sitemap: https://timilehinomotugba.com/sitemap.xml

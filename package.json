@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev -p 8000 --turbopack",
     "build": "next build",
+    "postbuild": "next-sitemap --config next-sitemap.config.mjs",
     "start": "next start",
     "lint": "next lint"
   },
@@ -13,6 +14,7 @@
     "@mantine/hooks": "^8.1.2",
     "iconsax-react": "^0.0.8",
     "next": "15.3.4",
+    "next-sitemap": "^4.2.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-fast-marquee": "^1.6.5"
