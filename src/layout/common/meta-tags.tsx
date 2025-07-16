@@ -3,8 +3,13 @@ import Head from "next/head";
 export function MetaTags() {
   return (
     <Head>
+      {/* Google Site Verification */}
+      <meta
+        name="google-site-verification"
+        content="BhuT7hhwmAmBNPhB6QyJ2GPWCuGYPFgfdCaZDyHJ_So"
+      />
       {/* Primary Meta Tags */}
-      <title>Timilehin Omotugba | Frontend Engineer</title>
+      <title>Timilehin Omotugba | Frontend Developer</title>
       <meta
         name="title"
         content="Timilehin Omotugba | Frontend Developer Portfolio"
@@ -49,6 +54,22 @@ export function MetaTags() {
         content="Hi, I'm Timilehin — a frontend developer passionate about building beautiful, performant web experiences."
       />
       <meta property="twitter:image" content="/timilehin.png" />
+
+      {/* Favicon */}
+      <link rel="icon" href="/favicon.ico" />
+      <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="/apple-touch-icon.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="/favicon-32x32.png"
+      />
+      {/* <link rel="manifest" href="/site.webmanifest" /> */}
+      <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     </Head>
   );
 }

@@ -1,30 +1,60 @@
 import { ActionIcon, Avatar, Box, Drawer, Group, Text } from "@mantine/core";
 import Link from "next/link";
 import { Container } from "./container";
-import { Add, Sun1 } from "iconsax-react";
+import { Add, PauseCircle, PlayCircle, Sun1 } from "iconsax-react";
 import { MobileMenu } from "@/icons";
 import { useDisclosure } from "@mantine/hooks";
 import { useTheme } from "@/hooks";
+import { useRouter } from "next/router";
 
 export function Header() {
   const [opened, { open, close }] = useDisclosure(false);
   const { colorScheme, toggleTheme } = useTheme();
+
+  const { pathname, query } = useRouter();
+  const action = (query.action ?? "play") as "play" | "pause";
 
   return (
     <Box c="white" h="100%">
       <Container h="100%">
         <Group h="100%" justify="space-between">
           <Link href="/">
-            <Group>
-              <Avatar />
+            <Group gap={3}>
+              <ActionIcon variant="white">
+                <Avatar src="/favicon.png" />
+              </ActionIcon>
 
               <Text fz={20} fw={700}>
-                Timilehin
+                imilehin
               </Text>
             </Group>
           </Link>
 
           <Group>
+            <ActionIcon
+              radius="xl"
+              visibleFrom="md"
+              component={Link}
+              href={{
+                pathname,
+                query:
+                  action === "pause"
+                    ? {}
+                    : {
+                        action: "pause",
+                      },
+              }}
+            >
+              {action === "pause" ? (
+                <PlayCircle variant="Bulk" className="fill-current" size={48} />
+              ) : (
+                <PauseCircle
+                  variant="Bulk"
+                  className="fill-current"
+                  size={48}
+                />
+              )}
+            </ActionIcon>
             <ActionIcon
               variant="transparent"
               // onClick={toggleTheme}
@@ -61,7 +91,6 @@ export function Header() {
         // bg="#19191B"
       >
         <Box py="md" px={4} bg="#19191B"></Box>
-        {/* Drawer content */}
       </Drawer>
     </Box>
   );

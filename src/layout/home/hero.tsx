@@ -1,12 +1,6 @@
-import { Title, Text, Stack, Box, ActionIcon, Group } from "@mantine/core";
-import { PauseCircle, PlayCircle } from "iconsax-react";
-import Link from "next/link";
-import { useRouter } from "next/router";
+import { Title, Text, Stack, Box, Group } from "@mantine/core";
 
 export function Hero() {
-  const { pathname, query } = useRouter();
-  const action = (query.action ?? "play") as "play" | "pause";
-
   return (
     <Box py={{ base: 60, md: 80 }} c="white">
       <Stack gap={24}>
@@ -21,31 +15,6 @@ export function Hero() {
         </Text>
 
         <Group>
-          <ActionIcon
-            variant="transparent"
-            top="50vh"
-            left={{ base: "53%", lg: "55%" }}
-            pos="fixed"
-            radius="xl"
-            size="xl"
-            visibleFrom="md"
-            component={Link}
-            href={{
-              pathname,
-              query:
-                action === "pause"
-                  ? {}
-                  : {
-                      action: "pause",
-                    },
-            }}
-          >
-            {action === "pause" ? (
-              <PlayCircle variant="Bold" className="fill-current" size={48} />
-            ) : (
-              <PauseCircle variant="Bulk" className="fill-current" size={48} />
-            )}
-          </ActionIcon>
           <a
             href="/resume.pdf"
             target="_blank"

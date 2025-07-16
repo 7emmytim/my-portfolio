@@ -24,7 +24,6 @@ export function Projects() {
       className="overflow-hidden"
     >
       <Marquee
-        pauseOnClick
         pauseOnHover
         play={play}
         direction={width > 992 ? "down" : "left"}
