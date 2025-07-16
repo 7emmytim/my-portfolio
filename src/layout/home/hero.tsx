@@ -1,12 +1,4 @@
-import {
-  Title,
-  Text,
-  Stack,
-  Box,
-  ActionIcon,
-  Button,
-  Group,
-} from "@mantine/core";
+import { Title, Text, Stack, Box, ActionIcon, Group } from "@mantine/core";
 import { PauseCircle, PlayCircle } from "iconsax-react";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -29,24 +21,14 @@ export function Hero() {
         </Text>
 
         <Group>
-          <Button
+          <ActionIcon
+            variant="transparent"
+            top="50vh"
+            left={{ base: "53%", lg: "55%" }}
+            pos="fixed"
             radius="xl"
-            size="md"
+            size="xl"
             visibleFrom="md"
-            w={130}
-            rightSection={
-              <ActionIcon variant="transparent">
-                {action === "pause" ? (
-                  <PlayCircle variant="Bold" className="fill-white" size={48} />
-                ) : (
-                  <PauseCircle
-                    variant="Bold"
-                    className="fill-white"
-                    size={48}
-                  />
-                )}
-              </ActionIcon>
-            }
             component={Link}
             href={{
               pathname,
@@ -58,8 +40,12 @@ export function Hero() {
                     },
             }}
           >
-            {action === "pause" ? "Play" : "Hold"}
-          </Button>
+            {action === "pause" ? (
+              <PlayCircle variant="Bold" className="fill-current" size={48} />
+            ) : (
+              <PauseCircle variant="Bulk" className="fill-current" size={48} />
+            )}
+          </ActionIcon>
           <a
             href="/resume.pdf"
             target="_blank"
