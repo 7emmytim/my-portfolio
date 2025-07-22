@@ -1,4 +1,6 @@
-import { Title, Text, Stack, Box, Group } from "@mantine/core";
+import { Title, Text, Stack, Box, Group, Button } from "@mantine/core";
+import { Arrow, ArrowRight } from "iconsax-react";
+import Link from "next/link";
 
 export function Hero() {
   return (
@@ -15,14 +17,20 @@ export function Hero() {
         </Text>
 
         <Group>
-          <a
+          <Button
+            color="white"
+            variant="subtle"
+            p={0}
+            component={Link}
+            rightSection={
+              <ArrowRight className="-rotate-45" size={18} color="white" />
+            }
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="opacity-0 text-sm m-0 p-0"
           >
-            Download Resume
-          </a>
+            View Resume
+          </Button>
         </Group>
       </Stack>
     </Box>

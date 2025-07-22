@@ -10,7 +10,7 @@ export function Footer() {
 
           </Group> */}
 
-        <Text size="sm" c="#6a7282" ta="right">
+        <Text size="sm" c="dimmed" ta="right">
           © {new Date().getFullYear()} Timilehin Omotugba. All rights reserved.
         </Text>
         {/* </Group> */}

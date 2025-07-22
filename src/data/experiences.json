@@ -5,7 +5,7 @@
         "type": "Full-time",
         "duration": "Jan 2021 - Present",
         "logo": "https://media.licdn.com/dms/image/v2/C4E0BAQGUXraIhl0u8w/company-logo_100_100/company-logo_100_100/0/1630644778319/afex_commodities_exchange_logo?e=1755129600&v=beta&t=Laq-Ptgl5poqFKmr9EPc1p98tgykNNE3zJkAqDf7Alw",
-        "description": "Currently working with backend apis and product designs to maintain Africa exchange, the company's trading platform",
+        "description": "Translated Figma designs and backend APIs into responsive, maintainable components for Africa Exchange, the company’s flagship trading platform.",
         "skills": [
             "Next.js",
             "TypeScript",
@@ -19,7 +19,7 @@
         "type": "Contract",
         "duration": "Aug 2022 - Nov 2022, Apr 2024 - Dec 2024",
         "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQFzwYyUSOmaoA/company-logo_100_100/company-logo_100_100/0/1674620522771?e=1755129600&v=beta&t=nlg9Q1iu46EKLNCPlyLf_McceXGjsjc1d3U0FzcmUWE",
-        "description": "Worked with a team to build two versions of the company's user and admin healthcare platforms",
+        "description": "Collaborated closely with a backend engineer, product designer, and the management team to deliver two robust versions of the company’s user and admin healthcare platforms.",
         "skills": [
             "Next.js",
             "Mantine UI",
@@ -33,7 +33,7 @@
         "type": "Contract",
         "duration": "Aug 2022 - Nov 2022, Apr 2024 - Dec 2024",
         "logo": "https://media.licdn.com/dms/image/v2/D4D0BAQELxqODs5LNqw/company-logo_100_100/company-logo_100_100/0/1661581875089?e=1755129600&v=beta&t=iepHSd3UYSwTsh0BDPPLZMnS7E_lPxxO_oLfAib2XxI",
-        "description": "Structured and queried data from strapi to build the blogs page",
+        "description": "Integrated with Strapi CMS to fetch and display dynamic blog content, optimizing the blogs page for scalability and content management.",
         "skills": [
             "Next.js",
             "Tailwind CSS",
