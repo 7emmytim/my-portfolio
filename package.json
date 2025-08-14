@@ -19,7 +19,8 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-fast-marquee": "^1.6.5",
-    "react-pdf": "^10.0.1"
+    "react-pdf": "^10.0.1",
+    "react-simple-typewriter": "^5.0.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

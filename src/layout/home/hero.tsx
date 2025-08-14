@@ -1,13 +1,19 @@
 import { Title, Text, Stack, Box, Group, Button } from "@mantine/core";
 import { ArrowRight } from "iconsax-react";
 import Link from "next/link";
+import { Typewriter } from "react-simple-typewriter";
 
 export function Hero() {
   return (
     <Box py={{ base: 60, md: 80 }} c="white">
       <Stack gap={24}>
         <Title order={1} fz={{ base: 30, md: 36, lg: 48 }} fw={700}>
-          Build Your Awesome Platform
+          <Typewriter
+            words={["Build Your Awesome Platform", "Create Something Nice"]}
+            cursor
+            cursorBlinking
+            loop
+          />
         </Title>
         <Text c="#99a1af">
           I am a Frontend Developer with hands-on experience in building

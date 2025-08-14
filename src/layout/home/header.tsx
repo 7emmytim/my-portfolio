@@ -14,7 +14,9 @@ import { MobileMenu } from "@/icons";
 import { useDisclosure } from "@mantine/hooks";
 import { useTheme } from "@/hooks";
 import { useRouter } from "next/router";
-import { PdfRenderer } from "./pdf-renderer";
+import dynamic from "next/dynamic";
+
+const PdfRenderer = dynamic(() => import("./pdf-renderer"), { ssr: false });
 
 export function Header() {
   const [opened, { open, close }] = useDisclosure(false);

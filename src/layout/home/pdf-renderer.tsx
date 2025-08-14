@@ -8,7 +8,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   import.meta.url
 ).toString();
 
-export function PdfRenderer() {
+export default function PdfRenderer() {
   const [numPages, setNumPages] = useState<number | null>(null);
   const [pageNumber, setPageNumber] = useState(1);
 
@@ -20,11 +20,7 @@ export function PdfRenderer() {
     <Document
       file="/resume.pdf"
       onLoadSuccess={onDocumentLoadSuccess}
-      loading={
-        <div style={{ padding: "2rem", textAlign: "center" }}>
-          Loading PDF...
-        </div>
-      }
+      loading={<div style={{ padding: "2rem", textAlign: "center" }} />}
       error={
         <div
           style={{
