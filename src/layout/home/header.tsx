@@ -1,4 +1,12 @@
-import { ActionIcon, Avatar, Box, Drawer, Group, Text } from "@mantine/core";
+import {
+  ActionIcon,
+  Avatar,
+  Box,
+  Drawer,
+  Group,
+  ScrollArea,
+  Text,
+} from "@mantine/core";
 import Link from "next/link";
 import { Container } from "./container";
 import { Add, PauseCircle, PlayCircle, Sun1 } from "iconsax-react";
@@ -6,6 +14,7 @@ import { MobileMenu } from "@/icons";
 import { useDisclosure } from "@mantine/hooks";
 import { useTheme } from "@/hooks";
 import { useRouter } from "next/router";
+import { PdfRenderer } from "./pdf-renderer";
 
 export function Header() {
   const [opened, { open, close }] = useDisclosure(false);
@@ -86,11 +95,12 @@ export function Header() {
       </Container>
 
       <Drawer
-        opened={false}
+        opened={opened}
         onClose={close}
-        // bg="#19191B"
+        size={600}
+        scrollAreaComponent={ScrollArea.Autosize}
       >
-        <Box py="md" px={4} bg="#19191B"></Box>
+        <PdfRenderer />
       </Drawer>
     </Box>
   );

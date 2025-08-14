@@ -11,10 +11,7 @@ export function MetaTags() {
         name="google-site-verification"
         content="BhuT7hhwmAmBNPhB6QyJ2GPWCuGYPFgfdCaZDyHJ_So"
       />
-      <meta
-        name="title"
-        content="Timilehin Omotugba | Frontend Developer Portfolio"
-      />
+      <meta name="title" content="Timilehin Omotugba | Frontend Developer" />
       <meta
         name="description"
         content="Hi, I'm Timilehin — a frontend developer passionate about building beautiful, performant web experiences using React, Next.js, and modern tools."
@@ -32,7 +29,7 @@ export function MetaTags() {
       <meta property="og:url" content="https://www.timilehinomotugba.com" />
       <meta
         property="og:title"
-        content="Timilehin Omotugba | Frontend Developer Portfolio"
+        content="Timilehin Omotugba | Frontend Developer"
       />
       <meta
         property="og:description"
@@ -51,7 +48,7 @@ export function MetaTags() {
       />
       <meta
         property="twitter:title"
-        content="Timilehin Omotugba | Frontend Developer Portfolio"
+        content="Timilehin Omotugba | Frontend Developer"
       />
       <meta
         property="twitter:description"

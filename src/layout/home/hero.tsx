@@ -1,5 +1,5 @@
 import { Title, Text, Stack, Box, Group, Button } from "@mantine/core";
-import { Arrow, ArrowRight } from "iconsax-react";
+import { ArrowRight } from "iconsax-react";
 import Link from "next/link";
 
 export function Hero() {
@@ -10,10 +10,11 @@ export function Hero() {
           Build Your Awesome Platform
         </Title>
         <Text c="#99a1af">
-          I’m Timilehin, a frontend developer based in Nigeria. I specialize in
-          building modern and performant web applications using technologies
-          like React, Next.js, and Tailwind CSS. I enjoy creating elegant user
-          interfaces that solve real-world problems.
+          I am a Frontend Developer with hands-on experience in building
+          responsive and performant applications using React, Next.js,
+          JavaScript/TypeScript, and Tailwind CSS. I thrive in fast-paced
+          environments, delivering scalable solutions while ensuring great user
+          experiences.
         </Text>
 
         <Group>
