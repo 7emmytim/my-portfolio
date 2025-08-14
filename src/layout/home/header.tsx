@@ -1,5 +1,3 @@
-"use client";
-
 import {
   ActionIcon,
   Avatar,
@@ -88,11 +86,7 @@ export function Header() {
               fz={28}
               onClick={opened ? close : open}
             >
-              {opened ? (
-                <Add className="rotate-45" color="white" />
-              ) : (
-                <MobileMenu />
-              )}
+              <MobileMenu />
             </ActionIcon>
           </Group>
         </Group>

@@ -12,6 +12,7 @@ import { Cd } from "iconsax-react";
 import { TransmitRight } from "@/icons";
 import data from "@/data/experiences.json";
 import { useViewportSize } from "@mantine/hooks";
+import { useState } from "react";
 
 export function Experience() {
   const { width } = useViewportSize();
@@ -43,7 +44,16 @@ export function Experience() {
     >
       {data.map(
         (
-          { company, title, type, duration, logo, description, skills },
+          {
+            company,
+            title,
+            type,
+            location,
+            duration,
+            logo,
+            description,
+            skills,
+          },
           index
         ) => {
           return (
@@ -66,6 +76,10 @@ export function Experience() {
                     <Text fz={12} inherit>
                       {type}
                     </Text>
+                    <Cd size={4} color="white" variant="Bold" />
+                    <Text fz={12} inherit>
+                      {location}
+                    </Text>
                   </Flex>
                   <Text c="dimmed" fz={12}>
                     {duration}
@@ -78,9 +92,7 @@ export function Experience() {
               }}
             >
               <Stack>
-                <Text c="white" size="sm" ta="justify">
-                  {description}
-                </Text>
+                <Description value={description} />
                 <Group gap={5}>
                   {skills.map((item) => {
                     return (
@@ -104,5 +116,34 @@ export function Experience() {
         }
       )}
     </Timeline>
+  );
+}
+
+function Description({ value }: { value: string }) {
+  const [isMore, setIsMore] = useState(false);
+
+  return (
+    <Stack gap={1}>
+      <Text
+        c="white"
+        size="sm"
+        className="leading-relaxed"
+        {...(isMore ? {} : { lineClamp: 3 })}
+      >
+        {value}
+      </Text>
+      {!isMore ? (
+        <Text
+          span
+          size="sm"
+          c="brand.1"
+          ta="right"
+          // variant="gradient"
+          onClick={() => setIsMore(true)}
+        >
+          Read more
+        </Text>
+      ) : null}
+    </Stack>
   );
 }

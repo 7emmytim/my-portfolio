@@ -1,9 +1,8 @@
-"use client";
-
 import { useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/Page/TextLayer.css";
 import "react-pdf/dist/Page/AnnotationLayer.css";
+import { Center, Loader } from "@mantine/core";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
@@ -19,7 +18,11 @@ export default function PdfRenderer() {
     <Document
       file="/resume.pdf"
       onLoadSuccess={onDocumentLoadSuccess}
-      loading={<div style={{ padding: "2rem", textAlign: "center" }} />}
+      loading={
+        <Center>
+          <Loader />
+        </Center>
+      }
       error={
         <div
           style={{
