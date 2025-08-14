@@ -3,6 +3,9 @@ import "@mantine/core/styles.css";
 import { createTheme, MantineProvider } from "@mantine/core";
 import type { AppProps } from "next/app";
 import { MetaTags } from "@/layout";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+import { initMixpanel } from "@/lib";
 
 const theme = createTheme({
   fontFamily: "Poppins, sans-serif",
@@ -25,6 +28,12 @@ const theme = createTheme({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+
+  useEffect(() => {
+    initMixpanel(); // Initialize Mixpanel
+  }, [router.events]);
+
   return (
     <MantineProvider theme={theme} defaultColorScheme="light">
       <MetaTags />

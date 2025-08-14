@@ -13,6 +13,7 @@
     "@mantine/core": "^8.1.2",
     "@mantine/hooks": "^8.1.2",
     "iconsax-react": "^0.0.8",
+    "mixpanel-browser": "^2.68.0",
     "next": "15.3.4",
     "next-sitemap": "^4.2.3",
     "react": "^19.0.0",
