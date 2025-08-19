@@ -66,16 +66,13 @@ export function Header() {
                 />
               )}
             </ActionIcon>
-            <ActionIcon
-              variant="transparent"
-              // onClick={toggleTheme}
-            >
+            {/* <ActionIcon variant="transparent" onClick={toggleTheme}>
               {colorScheme === "dark" ? (
                 <Sun1 color="white" size="100%" />
               ) : (
                 <Sun1 color="white" size="100%" />
               )}
-            </ActionIcon>
+            </ActionIcon> */}
 
             <ActionIcon
               w={36}

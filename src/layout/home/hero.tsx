@@ -19,7 +19,7 @@ export function Hero() {
         <Title order={1} fz={{ base: 30, md: 36, lg: 48 }} fw={700}>
           <Typewriter
             words={[
-              "Build A Great Product",
+              "Build a Great Product",
               "Create Something Nice",
               "Build From Scratch",
             ]}
