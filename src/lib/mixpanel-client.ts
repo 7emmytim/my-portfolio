@@ -8,5 +8,5 @@ export const initMixpanel = () => {
         return;
     }
 
-    mixpanel.init(MIXPANEL_TOKEN, { autocapture: true, track_pageview: true });
+    mixpanel.init(MIXPANEL_TOKEN, { autocapture: true, track_pageview: true, record_sessions_percent: 100 });
 }
